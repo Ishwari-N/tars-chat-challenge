@@ -6,8 +6,9 @@ import { ConvexReactClient, Authenticated } from "convex/react";
 import { ReactNode, useEffect, useState } from "react";
 import { SyncUser } from "../auth/sync-user";
 
-// Use the variable from your .env.local
-const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
+// Use the variable from your .env.local, with a fallback for build time
+const convexUrl = process.env.NEXT_PUBLIC_CONVEX_URL || "https://dummy-url.convex.cloud";
+const convex = new ConvexReactClient(convexUrl);
 
 export function ConvexClientProvider({ children }: { children: ReactNode }) {
   const [mounted, setMounted] = useState(false);
