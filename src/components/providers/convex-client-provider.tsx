@@ -24,13 +24,45 @@ export function ConvexClientProvider({ children }: { children: ReactNode }) {
       signInUrl="/sign-in"
       signUpUrl="/sign-up"
       appearance={{
+        layout: {
+          socialButtonsVariant: "auto",
+        },
         variables: {
           colorPrimary: "#6366f1", // indigo-500
           colorBackground: "#020617", // slate-950
           colorText: "#f8fafc", // slate-50
+          colorTextOnPrimaryBackground: "#ffffff",
           colorInputBackground: "#1e293b", // slate-800
           colorInputText: "#f8fafc", // slate-50
+          colorShimmer: "rgba(255,255,255,0.1)",
         },
+        elements: {
+          providerIcon__google: { filter: "invert(1) grayscale(100%) brightness(200%)" },
+          socialButtonsBlockButton: {
+            color: "#f8fafc",
+            backgroundColor: "rgba(255,255,255,0.03)",
+            borderColor: "rgba(255,255,255,0.1)",
+            "&:hover": {
+              backgroundColor: "rgba(255,255,255,0.06)",
+            },
+          },
+          socialButtonsBlockButtonText: {
+            color: "#f8fafc",
+          },
+          userButtonPopoverCard: {
+            backgroundColor: "#020617",
+            border: "1px solid rgba(255,255,255,0.1)",
+          },
+          userPreviewSecondaryIdentifier: {
+            color: "#94a3b8", // slate-400
+          },
+          userButtonPopoverActionButtonText: {
+            color: "#f8fafc",
+          },
+          userButtonPopoverActionButtonIcon: {
+            color: "#94a3b8",
+          },
+        }
       }}
     >
       <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
