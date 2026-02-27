@@ -9,7 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.38.2",
+    "@clerk/clerk-react": "^5.61.2",
+    "@clerk/nextjs": "^6.38.3",
     "@clerk/themes": "^2.4.56",
     "@radix-ui/react-scroll-area": "^1.2.10",
     "@radix-ui/react-slot": "^1.2.4",
